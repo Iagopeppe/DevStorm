@@ -16,7 +16,7 @@ Definir a documentação mínima para orientar desenvolvedores, QA e partes inte
 
 - Facilitar testes e validação
 
-- Servir de base para futuras evolões
+- Servir de base para futuras evoluções
 
 ## 3. Contexto
 
