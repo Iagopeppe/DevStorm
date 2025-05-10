@@ -29,7 +29,7 @@ Incluído:
 - Consulta de cardápio (seções, pratos do dia, valores)
 - Consulta de horários de funcionamento
 - Consulta de promoções ativas
-- Realização de pedidos por delivery (captura de itens e endereço)
+- Realização de pedidos por delivery via chatbot (escolha de itens)
 - Status de pedidos em andamento (tempo de preparo, previsão de entrega)
 - Encaminhamento “mock” a atendente humano para alterações de pedido ou problemas de pagamento
 
