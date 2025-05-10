@@ -1,6 +1,6 @@
 Documentação do Projeto MVP: Chatbot de Atendimento para Restaurante
 Nome do Projeto: Chatbot Inteligente para Suporte Nível 0 – Atendimento de Restaurante
-URL do MVP: https://incomparable-gumption-68ff3a.netlify.app/
+URL do MVP: https://devstormrestauranteficticio.netlify.app/
 Versão: 0.1 (MVP)
 Data: 9 de maio de 2025
 
@@ -118,6 +118,6 @@ Coletar feedback dos usuários para identificar pontos de melhoria e novas funci
 ## 10. Acesso ao MVP
 
 O MVP do chatbot pode ser acessado e testado através do seguinte link:
-https://incomparable-gumption-68ff3a.netlify.app/
+https://devstormrestauranteficticio.netlify.app/
 
 Para interagir, basta abrir o link em um navegador e iniciar a conversa com o chatbot através da interface de chat disponível.
