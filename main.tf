@@ -70,9 +70,11 @@ data "aws_ami" "amzn-linux-2023-ami" {
 }
 
 resource "aws_instance" "frontend" {
-    ami             = "ami-0c55b159cbfafe1f0"  # Você pode trocar isso pela ID da AMI que você pegou via data
+    ami             = "ami-0c55b159cbfafe1f0"  # Troque pela sua AMI
     instance_type   = "t2.large"
-    subnet_id       = aws_subnet.public_subnet_1.id  # Agora estamos usando apenas uma subnet
+    subnet_id       = aws_subnet.public_subnet_1.id  # Subnet corretamente associada
+    vpc_security_group_ids = [aws_security_group.sg-hackathon.id]  # Usando o id do SG
+
     tags = {
         Name = "frontend-instance"
     }
@@ -99,4 +101,43 @@ resource "aws_db_instance" "db" {
     tags = {
         Name = "chatbot-rds"
     }
+}
+
+resource "aws_eip" "frontend_eip" {
+  instance = aws_instance.frontend.id
+  domain   = "vpc"
+  tags = {
+    Name = "frontend-eip"
+  }
+}
+
+resource "aws_security_group" "sg-hackathon" {
+  name   = "security_group"
+  vpc_id = aws_vpc.vpc.id
+
+  tags = {
+    name = "sg_hackathon"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "sg_hackathon_80" {
+  security_group_id = aws_security_group.sg-hackathon.id
+  from_port         = 80
+  to_port           = 80
+  ip_protocol       = "tcp"
+  cidr_ipv4         = "0.0.0.0/0"  # Para acesso HTTP
+}
+
+resource "aws_vpc_security_group_ingress_rule" "sg_hackathon_22" {
+  security_group_id = aws_security_group.sg-hackathon.id
+  from_port         = 22
+  to_port           = 22
+  ip_protocol       = "tcp"
+  cidr_ipv4         = "0.0.0.0/0"  # SSH (ajuste seu IP aqui se preferir segurança maior)
+}
+
+resource "aws_vpc_security_group_egress_rule" "sg_hackathon_egress" {
+  security_group_id = aws_security_group.sg-hackathon.id
+  ip_protocol       = "-1"
+  cidr_ipv4         = "0.0.0.0/0"
 }
