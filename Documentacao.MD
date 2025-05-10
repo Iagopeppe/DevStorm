@@ -47,22 +47,17 @@ Excluído (fora do MVP)
 - Listagem completa das categorias do cardápio
 - Destaque para Prato do Dia
 
-  5.2 Promoções
+  5.2 Pedidos
 
-- Exibição de descontos válidos
+- Montagem ordens de compras
+- Perguntas sobre adicionar produtos a compra e mostrar o menu
 
-  5.3 Pedidos
-
-- Montagem de cesta de compras
-- Captura de endereço para delivery
-- Confirmação simulada de pagamento
-
-  5.4 Status de Pedido
+  5.3 Status de Pedido
 
 - Consulta do tempo de preparo
 - Previsão de chegada
 
-  5.5 Encaminhamento a Humano
+  5.4 Encaminhamento a Humano
 
 - “Mock” de transferência para atendente em chat real
 
